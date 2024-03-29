@@ -3,6 +3,12 @@ const express = require("express");
 const { connectDB } = require("./db/connect");
 const app = express();
 
+//routers
+const userRouter = require("./routes/user.route");
+
+//routes
+app.use("/api", userRouter);
+
 const port = process.env.PORT || 5000;
 const start = async () => {
   try {
