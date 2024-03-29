@@ -5,9 +5,12 @@ const app = express();
 
 //routers
 const userRouter = require("./routes/user.route");
+const authRouter = require("./routes/auth.route");
 
+app.use(express.json());
 //routes
 app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
 
 const port = process.env.PORT || 5000;
 const start = async () => {
