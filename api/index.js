@@ -7,7 +7,7 @@ const app = express();
 const userRouter = require("./routes/user.route");
 
 //routes
-app.use("/api", userRouter);
+app.use("/api/user", userRouter);
 
 const port = process.env.PORT || 5000;
 const start = async () => {
