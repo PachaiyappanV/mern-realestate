@@ -7,10 +7,17 @@ const app = express();
 const userRouter = require("./routes/user.route");
 const authRouter = require("./routes/auth.route");
 
+//errorhandlers
+const { notFound, errorHandler } = require("./middleware");
+
 app.use(express.json());
 //routes
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+
+//using errorhandlers
+app.use(notFound);
+app.use(errorHandler);
 
 const port = process.env.PORT || 5000;
 const start = async () => {
