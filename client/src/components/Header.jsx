@@ -7,7 +7,7 @@ const Header = () => {
     <header className="bg-slate-200">
       <div className="flex justify-between items-center mx-auto py-3 px-20 ">
         <Link to="/">
-          <h1 className="font-bold text-sm sm:text-xl">
+          <h1 className="font-bold text-sm sm:text-3xl">
             <span>Vivid</span>
             <span>Space</span>
           </h1>
@@ -32,7 +32,7 @@ const Header = () => {
               About
             </li>
           </Link>
-          <Link to="/sign-out">
+          <Link to="/sign-in">
             <li className="text-slate-700 hover:underline">Sign In</li>
           </Link>
         </ul>
