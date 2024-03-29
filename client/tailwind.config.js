@@ -2,11 +2,7 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      fontFamily: {
-        customfont: ["Montserrat Alternates", "sans-serif"],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
