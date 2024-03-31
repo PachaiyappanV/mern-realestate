@@ -50,6 +50,7 @@ const SignUp = () => {
           id="name"
           className="border p-3 rounded-lg focus:outline-none focus:shadow-xl"
           onChange={handleChange}
+          required
         />
         <input
           type="email"
@@ -57,6 +58,7 @@ const SignUp = () => {
           id="email"
           className="border p-3 rounded-lg focus:outline-none focus:shadow-xl"
           onChange={handleChange}
+          required
         />
         <input
           type="password"
@@ -64,6 +66,7 @@ const SignUp = () => {
           id="password"
           className="border p-3 rounded-lg focus:outline-none focus:shadow-xl"
           onChange={handleChange}
+          required
         />
         <button
           disabled={loading}
