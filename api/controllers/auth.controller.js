@@ -52,7 +52,7 @@ const google = async (req, res, next) => {
       const generatedPassword =
         Math.random().toString(36).slice(-8) +
         Math.random().toString(36).slice(-8);
-      const newUser = {
+      const tempUser = {
         name:
           req.body.name.split(" ").join("").toLowerCase() +
           Math.random().toString(36).slice(-4),
@@ -60,9 +60,9 @@ const google = async (req, res, next) => {
         password: generatedPassword,
         avatar: req.body.avatar,
       };
-      const user = await User.create(newUser);
-      const { password: pass, ...rest } = user;
-      const token = user.createJWT();
+      const newUser = await User.create(tempUser);
+      const { password: pass, ...rest } = newUser._doc;
+      const token = newUser.createJWT();
       res
         .cookie("access_token", token, { httpOnly: true })
         .status(200)
