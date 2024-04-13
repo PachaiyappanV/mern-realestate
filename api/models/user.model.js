@@ -33,6 +33,9 @@ const UserSchema = new Schema(
 );
 
 UserSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    return;
+  }
   try {
     const salt = await genSalt(10);
     this.password = await hash(this.password, salt);
